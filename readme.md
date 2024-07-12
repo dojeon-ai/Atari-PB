@@ -39,7 +39,7 @@ You don't have to download everything, especially the pre-training dataset (whic
 - Specify the download directory at `data_dir` when using download scripts.
 - Specify the same directory at `replay_dataset_path` in the `./configs/dataloader/pretrain.yaml` configuration file.
 - Specify your wandb entity name at `entity` in `./configs/pretrain.yaml`, `./configs/offline_bc.yaml`, etc. We recommend using `group_name` and `exp_name` as well.
-- (Optional) Specify the directory to store the processed Atari-PB dataset at `ataripb_dataset_path` in `./configs/dataloader/pretrain.yaml`. By default, all datasets will be stored under `./materials/model`.
+- (Optional) Specify the directory to store the processed Atari-PB dataset at `ataripb_dataset_path` in `./configs/dataloader/pretrain.yaml`. By default, all datasets will be stored under `./materials/dataset`.
 
 ## Implemented Algorithms
 
