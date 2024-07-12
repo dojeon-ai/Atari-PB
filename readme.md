@@ -27,12 +27,12 @@ While the above is running, you can start downloading required datasets for your
 
 You don't have to download everything, especially the pre-training dataset (which ends up taking around 6~700GB of storage).
 
-| Type      | Environment distribution            | Dataset source     | Download |
+| Type      | Distribution            | Dataset source     | Download |
 |-|-|-|-|
-| Pre-train | In-Domain (ID)                      | [DQN-Replay-Dataset](https://offline-rl.github.io/) | `./scripts/download_pretrain_dataset.sh`   |
-| Fine-tune | In-Domain (ID)                      | [DQN-Replay-Dataset](https://offline-rl.github.io/) | `./scripts/download_offline_bc_dataset.sh` |
-| Fine-tune | Near-Out-of-Distribution (Near-OOD) | [DQN-Replay-Dataset](https://offline-rl.github.io/) | `./scripts/download_offline_bc_dataset.sh` |
-| Fine-tune | Far-Out-of-Distribution (Far-OOD)   | 2M Rainbow agent                                    | [Download](https://gofile.me/6WpIS/fC465fvBE) (Password: ataripb) |
+| Pretrain | ID                      | [DQN-Replay-Dataset](https://offline-rl.github.io/) | `./scripts/download_pretrain_dataset.sh`   |
+| Finetune | ID                      | [DQN-Replay-Dataset](https://offline-rl.github.io/) | `./scripts/download_offline_bc_dataset.sh` |
+| Finetune | Near-OOD | [DQN-Replay-Dataset](https://offline-rl.github.io/) | `./scripts/download_offline_bc_dataset.sh` |
+| Finetune | Far-OOD   | 2M Rainbow agent                                    | [Download](https://gofile.me/6WpIS/fC465fvBE) (Password: ataripb) |
 
 **Important**: You have to make several (cumbersome) changes to the scripts and configs for Atari-PB to know where the dataset is.
 
