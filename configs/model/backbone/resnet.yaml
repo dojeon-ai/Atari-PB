@@ -1,0 +1,6 @@
+type: 'resnet'
+net_type: 'resnet50'
+in_shape: null
+action_size: null
+norm_type: 'gn'
+width_multiplier: 1.0

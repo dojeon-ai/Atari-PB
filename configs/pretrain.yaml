@@ -1,0 +1,23 @@
+project_name: 'atari_bench_pretrain'
+entity: 'your_wandb_entity_here'
+group_name: 'test'
+exp_name: 'test'
+wandb_run_name: null
+
+# distributed training
+master_addr: 'localhost'
+master_port: '1234' # use any free port
+world_size: null
+rank: 0
+num_nodes: 1
+num_gpus_per_node: 1
+device: cuda:0
+seed: 0
+
+defaults:
+- _self_
+- dataloader: pretrain
+- trainer: base
+- env: none
+- model: base
+- pretrained: load_none_freeze_none

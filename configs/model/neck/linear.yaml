@@ -1,0 +1,4 @@
+type: linear
+in_shape: null
+action_size: null
+hidden_dim: 512

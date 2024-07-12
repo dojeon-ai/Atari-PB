@@ -1,0 +1,10 @@
+ataripb_subdir_name: 'far_ood'
+
+games: ['human_cannonball','basic_math','klax','othello','surround']
+runs: [1]
+checkpoints: [2]
+samples_per_checkpoint: 50000
+
+defaults:
+  - pretrain
+  - _self_

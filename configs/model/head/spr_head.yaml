@@ -1,0 +1,6 @@
+type: spr_head
+in_shape: null
+action_size: 512
+num_heads: 60 # number of games
+num_predictions: ${eval:${dataloader.t_step}-1}
+num_actions: ${trainer.action_size}

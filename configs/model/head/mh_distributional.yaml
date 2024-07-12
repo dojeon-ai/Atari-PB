@@ -1,0 +1,5 @@
+type: mh_distributional
+in_shape: null
+action_size: null
+num_heads: 60 # number of games
+num_atoms: 51

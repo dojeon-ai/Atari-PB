@@ -1,0 +1,14 @@
+games: [ # in-distribution
+        'air_raid', 'amidar', 'asteroids', 'atlantis', 'bank_heist', 
+        'battle_zone', 'berzerk', 'bowling', 'boxing', 'breakout', 
+        'carnival', 'centipede', 'chopper_command', 'crazy_climber', 'demon_attack', 
+        'double_dunk', 'elevator_action', 'enduro', 'fishing_derby', 'freeway', 
+        'frostbite', 'gopher', 'gravitar', 'hero', 'ice_hockey', 
+        'jamesbond', 'kangaroo', 'krull', 'kung_fu_master', 'montezuma_revenge', 
+        'ms_pacman', 'name_this_game', 'phoenix', 'pitfall', 'private_eye', 
+        'qbert', 'road_runner', 'robotank', 'skiing', 'solaris', 
+        'space_invaders', 'star_gunner', 'tennis', 'time_pilot', 'tutankham', 
+        'up_n_down', 'video_pinball', 'wizard_of_wor', 'yars_revenge', 'zaxxon', 
+        # out-of-distribution
+        'alien', 'assault', 'asterix', 'beam_rider', 'journey_escape',
+        'pong', 'pooyan', 'riverraid', 'seaquest', 'venture']

@@ -1,0 +1,11 @@
+type: 'impala'
+in_shape: null
+action_size: null
+channels: (16, 32, 32)
+strides: (3, 2, 2)
+scale_ratio: 2
+expansion_ratio: 2
+blocks_per_group: 3
+norm_type: 'bn'
+init_type: null
+renormalize: False

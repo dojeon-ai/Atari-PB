@@ -1,0 +1,5 @@
+type: atc_head
+in_shape: null
+action_size: null
+num_heads: 60 # number of games
+hidden_dims: [512, 512]

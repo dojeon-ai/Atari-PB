@@ -1,0 +1,7 @@
+obs_shape: [4,1,84,84]
+action_size: 18
+
+defaults:
+- backbone: nature
+- neck: linear
+- head: mh_distributional

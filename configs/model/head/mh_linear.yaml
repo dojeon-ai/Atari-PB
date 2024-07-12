@@ -1,0 +1,4 @@
+type: mh_linear
+in_shape: null
+action_size: null
+num_heads: 60 # number of games

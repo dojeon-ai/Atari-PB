@@ -1,0 +1,7 @@
+obs_shape: [4,1,84,84]
+action_size: 18
+
+defaults:
+- backbone: resnet
+- neck: mh_spatial_mlp
+- head: mh_linear

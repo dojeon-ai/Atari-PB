@@ -1,0 +1,11 @@
+type: 'atari'
+num_train_envs: 1
+num_eval_envs: 100
+
+game: ${dataloader.games}
+frame_skip: 4
+frame: 4
+horizon: 27000
+grayscale: True
+minimal_action_set: True
+seed: ${seed}

@@ -1,0 +1,11 @@
+# Small dataset for debugging/sanity checking
+games: ['air_raid', 'amidar']
+runs: [1,2]
+checkpoints: [1,2]
+samples_per_checkpoint: 1000
+batch_size: 32
+eval_ratio: 0.1
+
+defaults:
+  - pretrain
+  - _self_

@@ -1,0 +1,12 @@
+type: mae_head
+in_shape: null
+action_size: 784 # num pixels in each patch, 14*14*4
+num_heads: 60
+norm_type: 'ln'
+obs_shape: ${model.obs_shape}
+
+transformer_decoder:
+  dim: ${model.vit_embed_dim} # embed dim
+  mlp_dim: ${model.vit_mlp_dim} # mlp ratio = 4.0
+  depth: 3 # num layers 
+  heads: 4 # num heads

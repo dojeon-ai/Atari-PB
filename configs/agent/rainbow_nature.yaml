@@ -1,0 +1,127 @@
+###################
+# defaults
+type: 'rainbow'
+num_timesteps: 2000000 # 2M
+obs_shape: None
+action_size: None
+
+compile: True
+
+#################
+# buffer
+min_buffer_size: 20000
+save_buffer_every: 1000000
+buffer_dir: './materials/buffer'
+run: 1
+
+buffer: 
+    type: 'per_buffer'
+    obs_shape: ${agent.obs_shape}
+    action_size: ${agent.action_size}
+    size: 1000000
+    prior_exp: 0.5 # ω
+    max_n_step: 10
+
+prior_weight_scheduler: # β
+    type: 'linear'
+    initial_value: 0.4
+    final_value: 1.0
+    max_step: ${agent.total_optimize_steps}
+
+#####################
+# exploration
+eps_scheduler:
+    type: 'linear'
+    initial_value: 1.0
+    final_value: 0.02
+    max_step: 1000000
+
+# mode: whether to use bn/gn/ln
+exploration_model: 'target'
+exploration_mode:
+    backbone: eval
+    neck: train
+    head: train
+
+######################
+# optimization
+optimizer:
+    type: 'adam'
+    lr: 0.0001 # sqrt(2)
+    weight_decay: 0.0
+    betas: [0.9, 0.999]
+    eps: 0.00015
+
+total_optimize_steps: (${agent.num_timesteps} - ${agent.min_buffer_size}) * ${agent.optimize_per_env_step} 
+optimize_per_env_step: 1
+batch_size: 32
+clip_grad_norm: 10
+double: True
+
+v_min: -10
+v_max: 10
+
+# mode: whether to use bn/gn/ln
+aug_types: [random_shift, intensity]
+aug_target: True
+train_online_mode:
+    backbone: eval
+    neck: train
+    head: train
+train_target_mode:
+    backbone: eval
+    neck: train
+    head: train
+
+# architectural
+freeze_layers: ${pretrained.freeze_layers}
+target_tau: 0.99
+update_buffer: True
+
+# reset
+reset_per_optimize_step: -1
+reset_weight_type: # [original, random]
+    backbone: original
+    neck: original
+    head: original
+reset_type: # [sp (shrink & perturb), full]
+    backbone: sp
+    neck: full
+    head: full
+sp_alpha: 0.5
+reset_target: True
+
+# scheduler w.r.t reset
+gamma_scheduler:
+    type: 'exponential'
+    initial_value: 0.99
+    final_value: 0.99
+    max_step: ${agent.total_optimize_steps}
+    reverse: True
+
+n_step_scheduler:
+    type: 'exponential'
+    initial_value: 10
+    final_value: 10
+    max_step: ${agent.total_optimize_steps}
+
+######################
+# Regularization
+# https://arxiv.org/pdf/2308.11958.pdf
+pd_layers: ['backbone'] # ['backbone', 'neck', 'head']
+pd_per_optimize_step: -1
+pd_lmbda: 0.0
+
+#######################
+# evaluation
+# frequencies are based on environmental step
+evaluate_freq: 10000     # evaluate metric (e.g., fisher diagonal)
+eval_batch_size: 32    # number of samples for visaulization
+plot_weight_histogram: False
+
+rollout_freq: 1000000  
+rollout_model: 'target'
+eval_eps: 0.001
+
+# logging
+log_freq: 1000

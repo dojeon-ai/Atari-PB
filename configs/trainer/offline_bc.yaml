@@ -1,0 +1,19 @@
+type: 'bc'
+
+optimizer:
+    type: 'adamw'
+    lr: 0.001
+    weight_decay: 0.0001
+    betas: [0.9, 0.999]
+    eps: 0.00000001
+
+eval_every: -1
+save_every: -1
+
+num_epochs: 100
+rollout_every: 100 # epochs
+log_every: 100 # steps
+
+defaults:
+  - base
+  - _self_

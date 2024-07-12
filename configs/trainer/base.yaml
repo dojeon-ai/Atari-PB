@@ -1,0 +1,58 @@
+# defaults
+type: 'bc'
+obs_shape: [4,1,84,84]
+action_size: 18
+distributed: False
+num_gpus: ${num_gpus_per_node}
+t_step: ${dataloader.t_step} 
+n_step: ${dataloader.n_step}
+gamma: ${dataloader.gamma}
+frame: ${dataloader.frame}
+games: ${dataloader.games}
+
+# resume training
+# run_ids and ckpt_path are only used when resume training
+# run_ids: list of run_ids which length is world size (e.g., ['27mb1lj6','1i0sh9lj'])
+# ckpt_path: ckpt_path to resume training (e.g., './models/bc/27mb1lj6/epoch7.pth')
+resume: False
+run_ids: [] 
+ckpt_path: None
+
+# performance optimization
+use_amp: True
+compile: True
+
+# training
+num_epochs: 100 
+clip_grad_norm: 0.5
+
+aug_types: [random_shift, intensity]
+
+optimizer:
+    type: 'adamw'
+    lr: 0.0001
+    weight_decay: 0.00001
+    betas: [0.9, 0.999]
+    eps: 0.00000001
+
+scheduler:
+    cycle_mult: 1.0
+    max_lr: ${trainer.optimizer.lr}
+    min_lr_ratio: 0.1
+    warmup_ratio: 0.1
+    gamma: 1.0
+
+# target update
+target_update_every: -1 # per_step
+
+# evaluation & logging
+log_every: 1000 # per_step
+eval_every: 10  # per_epoch
+eval_data_size: 5000
+save_every: 10  # per_epoch
+save_path: './materials/model'
+
+# rollout
+rollout_every: -1 # per_epoch 
+num_eval_envs: ${env.num_eval_envs}
+eval_eps: 0.001

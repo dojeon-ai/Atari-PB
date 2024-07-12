@@ -1,0 +1,4 @@
+# offline_bc, online_rl: scratch
+ckpt_path: ''
+load_layers: []
+freeze_layers: []

@@ -1,0 +1,25 @@
+project_name: 'atari_bench_bc'
+entity: 'your_wandb_entity_here'
+group_name: 'test'
+exp_name: 'test'
+wandb_run_name: null
+
+# parallel training
+# seeds: number of different seeds to run
+seeds: [0,1,2] 
+num_nodes: 1
+num_gpus_per_node: 1
+num_exps_per_gpu: 1
+rank: 0
+
+# each run
+device: null
+seed: null
+
+defaults:
+- _self_
+- dataloader: offline_bc
+- trainer: offline_bc
+- env: atari
+- model: bc
+- pretrained: load_none_freeze_b

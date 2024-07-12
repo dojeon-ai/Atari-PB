@@ -1,0 +1,4 @@
+# zero-shot
+ckpt_path: '' # needs to be provided
+load_layers: ['backbone', 'neck', 'head']
+freeze_layers: ['backbone', 'neck', 'head']

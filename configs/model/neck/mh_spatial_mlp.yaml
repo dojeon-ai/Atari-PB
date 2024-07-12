@@ -1,0 +1,6 @@
+type: mh_spatial_mlp
+in_shape: null
+action_size: null
+num_heads: 60 # number of games
+norm_type: 'ln'
+hidden_dims: [1024, 512]

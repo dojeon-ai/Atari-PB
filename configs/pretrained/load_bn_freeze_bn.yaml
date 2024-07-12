@@ -1,0 +1,4 @@
+# offline_bc, online_rl
+ckpt_path: '' # needs to be provided
+load_layers: ['backbone', 'neck']   # ['backbone', 'neck', 'head']
+freeze_layers: ['backbone', 'neck'] # ['backbone', 'neck', 'head']
