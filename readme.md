@@ -57,7 +57,7 @@ You don't have to download everything, especially the pre-training dataset (whic
 | DT        | [Chen et al.](https://arxiv.org/abs/2106.01345)            | `./scripts/pretrain/dt.sh`      | 
 | CQL       | [Kumar et al.](https://arxiv.org/abs/2006.04779)           | `./scripts/pretrain/cql_dist.sh` <br/> `./scripts/pretrain/cql_mse.sh`  |
 
-Several algorithms likely won't fit into a single GPU; we recommend activating DDP via `--overrides num_gpus_per_node` in the scripts.
+Several algorithms likely won't fit into a single GPU; we recommend activating DDP by adding e.g. `--overrides num_gpus_per_node=4` in the scripts.
 
 ## Model Weights
 
