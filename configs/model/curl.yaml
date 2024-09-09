@@ -1,0 +1,12 @@
+# Contrastive methods (ATC,CURL,R3M,...)
+# Head keeps neck's output dim (square matrix)
+obs_shape: [4,1,84,84]
+action_size: 18
+head:
+  action_size: 512 # hidden_dims[-1]
+
+defaults:
+- backbone: resnet
+- neck: mh_spatial_mlp
+- head: mh_linear
+- _self_ # override head

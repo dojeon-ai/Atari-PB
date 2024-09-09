@@ -1,0 +1,38 @@
+# Masked World Model
+obs_shape: [4,1,84,84]
+action_size: 18
+mask_ratio: 0.95
+vit_embed_dim: 512
+vit_mlp_dim: 2048 # mlp ratio = 4.0
+
+neck:
+  type: siammae_neck
+  in_shape: null
+  action_size: null
+  num_heads: 60 # number of games
+  norm_type: 'ln'
+  mask_ratio: 0.95
+  hidden_dims: [1024, 512]
+
+  transformer_encoder:
+    dim: 512 # embed dim
+    mlp_dim: 2048 # mlp ratio = 4.0
+    depth: 4 # num layers 
+    heads: 4 # num heads
+
+head:
+  type: siammae_head
+  in_shape: null
+  action_size: 784 # num pixels in each patch, 14*14*4
+  num_heads: 60
+  norm_type: 'ln'
+  obs_shape: [4,1,84,84]
+
+  transformer_decoder:
+    dim: 512 # embed dim
+    mlp_dim: 2048 # mlp ratio = 4.0
+    depth: 3 # num layers 
+    heads: 4 # num heads
+
+defaults:
+- backbone: resnet

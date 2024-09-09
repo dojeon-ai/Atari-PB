@@ -1,0 +1,24 @@
+# Decision Transformer
+obs_shape: [4,1,84,84]
+action_size: 18
+dt_embed_dim: 512
+dt_mlp_dim: 2048 
+
+neck:
+  type: dt_neck
+  in_shape: null
+  action_size: null
+  num_heads: 60 # number of games
+  norm_type: 'ln'
+  hidden_dims: [1024, 512]
+  t_step: 8
+
+  transformer_encoder:
+    dim: 512 # embed dim
+    mlp_dim: 2048 # mlp ratio = 4.0
+    depth: 4 # num layers 
+    heads: 4 # num heads
+
+defaults:
+- backbone: resnet
+- head: mh_linear

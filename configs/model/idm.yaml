@@ -1,0 +1,12 @@
+# IDM/ACRO
+# Neck's output gets stacked, doubling its dim size
+obs_shape: [4,1,84,84]
+action_size: 18
+head:
+  in_shape: 1024 # hidden_dims[-1]*2
+
+defaults:
+- backbone: resnet
+- neck: mh_spatial_mlp
+- head: mh_linear
+- _self_ # override head

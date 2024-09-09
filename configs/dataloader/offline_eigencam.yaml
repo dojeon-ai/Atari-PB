@@ -1,0 +1,16 @@
+ataripb_subdir_name: 'test'
+replay_dataset_path: 'your_path_here'
+ataripb_dataset_path: './materials/dataset'
+games: [ # big object
+        'boxing', 'kung_fu_master', 
+        # samll object
+        'breakout', 'gravitar', 'krull']
+runs: [1,2]
+checkpoints: [50]
+samples_per_checkpoint: 10000
+
+num_of_samples: 20
+
+defaults:
+  - pretrain
+  - _self_
