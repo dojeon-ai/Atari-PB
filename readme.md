@@ -6,7 +6,7 @@ Atari-PB is the first benchmark to compare the generalization capabilities of pr
 
 Each algorithm is evaluated by first pre-training an agent on a 10M dataset (across 50 games) then fine-tuning on 3 distinct environment distributions (ID, Near-OOD, Far-OOD, total 65 games).
 
-[[Paper]](https://arxiv.org/abs/2406.06037) [[Project page]](https://i-am-proto.github.io/atari-pb/) [[Model Weights & Datasets]](https://gofile.me/6WpIS/28juzliXx) (Password: ataripb)
+[[Paper]](https://arxiv.org/abs/2406.06037) [[Project page]](https://i-am-proto.github.io/atari-pb/) [[Model Weights & Datasets]](https://zenodo.org/records/16981616)
 
 ## Installation
 
@@ -32,7 +32,7 @@ You don't have to download everything, especially the pre-training dataset (whic
 | Pretrain | ID                      | [DQN-Replay-Dataset](https://offline-rl.github.io/) | `./scripts/download_pretrain_dataset.sh`   |
 | Finetune | ID                      | [DQN-Replay-Dataset](https://offline-rl.github.io/) | `./scripts/download_offline_bc_dataset.sh` |
 | Finetune | Near-OOD | [DQN-Replay-Dataset](https://offline-rl.github.io/) | `./scripts/download_offline_bc_dataset.sh` |
-| Finetune | Far-OOD   | 2M Rainbow agent                                    | [Download](https://gofile.me/6WpIS/fC465fvBE) (Password: ataripb) |
+| Finetune | Far-OOD   | 2M Rainbow agent                                    | [Download](https://zenodo.org/records/16981616) |
 
 **Important**: You have to make several (cumbersome) changes to the scripts and configs for Atari-PB to know where the dataset is.
 
@@ -61,8 +61,6 @@ Several algorithms likely won't fit into a single GPU; we recommend activating D
 
 ## Model Weights
 
-You can download the checkpoints of our pre-trained models in the main experiment [here](https://gofile.me/6WpIS/zHpJWJLGu) (Password: ataripb).
-
-For checkpoints in the ablation studies, please contact the author via quagmire@kaist.ac.kr.
+You can download the checkpoints of our pre-trained models in the main experiment [here](https://zenodo.org/records/16981616).
 
 To fine-tune these models, you can start with `./scripts/offline_bc/base.sh` and `./scripts/online_rl/base.sh`.
